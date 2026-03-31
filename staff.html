@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurdistan Unity | Staff</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="discord-backend" content="auto" />
+</head>
+<body class="subpage">
+  <canvas id="scene3d" aria-hidden="true"></canvas>
+  <div class="noise"></div>
+  <header class="header glass">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <div class="brand-logo-wrap pulse-gif small-logo"><img src="assets/logo.png" alt="logo" class="brand-logo"></div>
+        <div><strong>Kurdistan Unity RP</strong><small>Staff Command</small></div>
+      </a>
+      <nav class="nav open static-nav">
+        <a href="index.html">Home</a>
+        <a href="admin.html">Admin</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container sub-hero">
+    <section class="section-head reveal top-space">
+      <span>STAFF PAGE</span>
+      <h1 data-site-key="staffTitle">تیمی ستاف</h1>
+    </section>
+
+    <section class="staff-grid reveal">
+      <article class="staff-card glass tilt-card"><span class="role-badge owner">Owner</span><h3>Unity Founder</h3><p>سەرپەرشتی سێرڤەر و ڕێکخستن.</p><strong>Available</strong></article>
+            <article class="staff-card glass tilt-card"><span class="role-badge owner">CO-founder</span><h3>CO-founder</h3><p>سەرپەرشتی دووەمی سێرڤەر و ڕێکخستن</p><strong>Online 24/7</strong></article>
+      <article class="staff-card glass tilt-card"><span class="role-badge admin">Admin</span><h3>Shadow Admin</h3><p>چارەسەری report و ticket.</p><strong>Active</strong></article>
+      <article class="staff-card glass tilt-card"><span class="role-badge mod">Moderator</span><h3>City Guardian</h3><p>پاراستنی یاساکان و RP quality.</p><strong>Available</strong></article>
+      <article class="staff-card glass tilt-card"><span class="role-badge support">Support</span><h3>Helper One</h3><p>یارمەتی پلەیەرە نوێکان.</p><strong>Fast Reply</strong></article>
+      <article class="staff-card glass tilt-card"><span class="role-badge support">Support</span><h3>Helper Two</h3><p>خزمەتگوزاری Discord و game.</p><strong>Ticket Ready</strong></article>
+      <article class="staff-card glass tilt-card"><span class="role-badge admin">Admin</span><h3>Event Master</h3><p>ئامادەکردنی event و giveaway.</p><strong>Weekend Events</strong></article>
+    </section>
+
+    <section class="section dual-grid top-space reveal">
+      <article class="glass panel">
+        <div class="section-mini-head"><span>STAFF POSTS</span><h3>پۆستی نوێی ستاف</h3></div>
+        <div id="staffPosts" class="feed-list"></div>
+      </article>
+      <article class="glass panel">
+        <div class="section-mini-head"><span>APPLY</span><h3>داواکردنی بوون بە ستاف</h3></div>
+        <form id="applyForm" class="stack-form">
+          <input id="applyName" type="text" placeholder="ناوی خۆت" required>
+          <input id="applyDiscord" type="text" placeholder="Discord / Username" required>
+          <textarea id="applyReason" rows="5" placeholder="بۆچی دەتەوێت ببیتە ستاف؟" required></textarea>
+          <button id="applyBtn" class="btn btn-primary" type="submit">Send Apply</button>
+        </form>
+      </article>
+    </section>
+
+
+    <section class="section top-space reveal">
+      <article class="glass panel">
+        <div class="section-mini-head"><span>APPLICATION STATUS</span><h3>دۆخی داواکاریەکەت بزانە</h3></div>
+        <div class="stack-form">
+          <input id="statusDiscord" type="text" placeholder="Discord / Username ـەکەت">
+          <button id="checkStatusBtn" class="btn btn-secondary" type="button">پشکنینی دۆخ</button>
+        </div>
+        <div id="applicationStatus" class="top-space"></div>
+        <p class="muted-note">لە دوای قبوڵکردن یان ڕەتکردنەوە، نامەکەت لە دیسکۆرد پیشان دەدرێت. ئەگەر قبوڵ کرابیت، لینکی Discord ـیش دەبینیت.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script type="module" src="site-content.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

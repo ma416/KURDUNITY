@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurdistan Unity RP | Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="discord-backend" content="auto" />
+</head>
+<body class="subpage">
+  <canvas id="scene3d" aria-hidden="true"></canvas>
+  <div class="noise"></div>
+  <header class="header glass">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <div class="brand-logo-wrap pulse-gif small-logo"><img src="assets/logo.png" alt="logo" class="brand-logo"></div>
+        <div><strong>Kurdistan Unity </strong><small>Admin Control</small></div>
+      </a>
+      <nav class="nav open static-nav">
+        <a href="index.html">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="shop.html">Shop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container sub-hero">
+    <section class="section-head reveal top-space">
+      <span>ADMIN PAGE</span>
+      <h1 data-site-key="adminTitle">بەشی ئەدمین</h1>
+    </section>
+
+    <section id="adminLoginView" class="section dual-grid top-space reveal">
+      <article class="glass panel admin-login-panel">
+        <div class="section-mini-head"><span>ADMIN LOGIN</span><h3>چوونەژوورەوەی ئەدمین</h3></div>
+        <form id="adminLoginForm" class="stack-form">
+          <input id="adminUsername" type="text" placeholder="Admin username" required>
+          <input id="adminPassword" type="password" placeholder="Admin password" required>
+          <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+        <div id="adminLoginState" class="status-pill top-space">چاوەڕێی login...</div>
+      </article>
+
+      <article class="glass panel">
+        <div class="section-mini-head"><span>ROLE SYSTEM</span><h3>دەسەڵاتەکان</h3></div>
+        <div class="feed-list">
+          <article class="feed-item glass"><strong>KU Member</strong><p>بینینی بەشە گشتیەکان، پۆستکردن و دەستکاریکردنی پرۆفایل.</p></article>
+          <article class="feed-item glass"><strong>Admin</strong><p>دەسەڵاتی تەواو: role management، بەڕێوەبردنی content و کۆنترۆڵی هەموو website.</p></article>
+        </div>
+      </article>
+    </section>
+
+    <section id="adminDashboard" class="top-space reveal admin-hidden">
+      <section class="features-grid admin-stats-grid">
+        <article class="feature glass tilt-card"><div class="feature-icon">👤</div><h3>Total Users</h3><p id="statUsers">0</p></article>
+        <article class="feature glass tilt-card"><div class="feature-icon">🛡️</div><h3>Admins</h3><p id="statAdmins">0</p></article>
+        <article class="feature glass tilt-card"><div class="feature-icon">🌐</div><h3>KU Members</h3><p id="statMembers">0</p></article>
+        <article class="feature glass tilt-card"><div class="feature-icon">✅</div><h3>Session</h3><p id="adminSessionLabel">Not connected</p></article>
+      </section>
+
+      <section class="section dual-grid top-space">
+        <article class="glass panel">
+          <div class="section-mini-head"><span>ROLE MANAGER</span><h3>زیادکردن / گۆڕینی role</h3></div>
+          <form id="roleAssignForm" class="stack-form">
+            <input id="roleUserId" type="text" placeholder="Discord / User ID" required>
+            <input id="roleUserName" type="text" placeholder="Name / Username" required>
+            <select id="roleSelect">
+              <option value="ku_member">KU Member</option>
+              <option value="admin">Admin</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Save Role</button>
+          </form>
+          <div id="roleAssignState" class="status-pill top-space">هیچ role ـێک هێشتا نوێ نەکراوەتەوە</div>
+          <p class="muted-note">ئەگەر user login کردبێت یان profile هەبێت، لە خوارەوە دەردەکەوێت. هەروەها دەتوانیت بە ID دەستی role زیاد بکەیت.</p>
+        </article>
+
+        <article class="glass panel">
+          <div class="section-mini-head"><span>WEBSITE CONTENT</span><h3>دەستکاریکردنی سەرەکی وێبسایت</h3></div>
+          <form id="siteContentForm" class="stack-form">
+            <input id="homeHeroTitle" type="text" placeholder="Home hero title">
+            <textarea id="homeHeroText" rows="4" placeholder="Home hero text"></textarea>
+            <input id="shopTitle" type="text" placeholder="Shop title">
+            <textarea id="shopIntro" rows="3" placeholder="Shop intro"></textarea>
+            <input id="staffTitle" type="text" placeholder="Staff title">
+            <textarea id="staffIntro" rows="3" placeholder="Staff intro"></textarea>
+            <input id="adminTitleInput" type="text" placeholder="Admin title">
+            <textarea id="adminIntroInput" rows="3" placeholder="Admin intro"></textarea>
+            <button class="btn btn-secondary" type="submit">Save Website Content</button>
+          </form>
+          <div id="siteContentState" class="status-pill top-space">هێشتا هیچ content ـێک پاشەکەوت نەکراوە</div>
+        </article>
+      </section>
+
+      <section class="section top-space">
+        <article class="glass panel">
+          <div class="section-mini-head"><span>WEBSITE ACCOUNTS</span><h3>ناوی هەموو ئەو کەسانەی ئەکاونتیان هەیە</h3></div>
+          <div class="stack-form compact-stack">
+            <input id="accountSearchInput" type="text" placeholder="گەڕان بە ناو یان ID...">
+          </div>
+          <div id="accountDirectoryState" class="status-pill top-space">هێشتا هیچ account ـێک نەدۆزرایەوە</div>
+          <div id="websiteAccountsList" class="feed-list top-space"></div>
+        </article>
+      </section>
+
+      <section class="section dual-grid top-space">
+        <article class="glass panel">
+          <div class="section-mini-head"><span>USERS & ROLES</span><h3>لیستی بەکارهێنەرەکان</h3></div>
+          <div id="roleUsersList" class="feed-list"></div>
+        </article>
+
+        <article class="glass panel">
+          <div class="section-mini-head"><span>SESSION CONTROL</span><h3>کۆنترۆڵی ئەدمین</h3></div>
+          <div class="stack-form">
+            <button id="refreshAdminData" class="btn btn-primary" type="button">Refresh Data</button>
+            <button id="adminLogoutBtn" class="btn btn-secondary" type="button">Logout</button>
+          </div>
+          <div class="status-pill top-space" id="adminActionState">ئەدمین ئامادەیە بۆ بەڕێوەبردن</div>
+          <p class="muted-note">Admin role لەم وەشانە full access ـە و دەتوانێت role و content ـی website بگۆڕێت.</p>
+        </article>
+      </section>
+
+      <section class="section top-space">
+        <article class="glass panel">
+          <div class="section-mini-head"><span>STAFF APPLICATIONS</span><h3>داواکاریەکانی ستاف</h3></div>
+          <div id="applications" style="margin-top:20px; min-height:160px;"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script type="module" src="site-content.js"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kurdistan Unity RP | Ultra 3D FiveM Website" />
+  <title>Kurdistan Unity | Ultra 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="discord-backend" content="auto" />
+</head>
+<body class="theme-home">
+  <canvas id="scene3d" aria-hidden="true"></canvas>
+  <div class="noise"></div>
+  <div class="cursor-glow"></div>
+
+  <header class="header glass">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html#top">
+        <div class="brand-logo-wrap pulse-gif">
+          <img src="assets/logo.png" alt="Kurdistan Unity RP Logo" class="brand-logo" />
+        </div>
+        <div>
+          <strong>Kurdistan Unity</strong>
+        </div>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#features">تایبەتمەندی</a>
+        <a href="#feed">پۆست</a>
+        <a href="#friends">هاوڕێ</a>
+        <a href="staff.html">ستاف</a>
+        <a href="shop.html">کڕین</a>
+        <a href="#discord">دیسکۆرد</a>
+        <a class="nav-btn ghost-btn" href="https://discord.gg/SPA8RXs9" target="_blank" rel="noopener">Join Discord</a>
+        <button class="nav-btn profile-nav-btn" id="authOpen" type="button">
+          <span class="profile-nav-avatar-wrap">
+            <img src="assets/logo.png" alt="Profile" id="navProfileAvatar" class="profile-nav-avatar" />
+            <span class="profile-nav-dot" aria-hidden="true"></span>
+          </span>
+          <span class="profile-nav-copy">
+            <strong id="navProfileLabel">Account</strong>
+            <small id="navProfileSub">Discord Profile</small>
+          </span>
+        </button>
+        <button class="nav-btn music-btn" id="musicToggle">Music: OFF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"></div>
+        <h1>
+          <span data-site-key="homeHeroTitle">welcome to Kurdistan Unity</span>
+        
+        </h1>
+        <p data-site-key="homeHeroText">بەخێربێیت بۆ کۆمەڵگای Kurdistan Unity لێرە دەتوانیت بچیتە ژوورەوە، پرۆفایلەکەت ڕێکبخەیت و بەشداری لە کۆمەڵگا بکەیت.</p>
+
+        <article class="profile-showcase glass tilt-card reveal delay-1 luxury-profile-card">
+          <div class="profile-cover" id="profileBanner"></div>
+          <div class="profile-top">
+            <div class="profile-avatar pulse-gif" id="profileAvatarWrap">
+              <img src="assets/logo.png" alt="Kurdistan Unity Profile" id="profileAvatarImg" />
+              <span class="profile-online" aria-hidden="true"></span>
+            </div>
+            <div>
+              <span class="profile-kicker">UNITY PROFILE</span>
+              <h3 id="profileName">Kurdistan unity </h3>
+              <p class="profile-status" id="profileRole">Unity Member</p>
+              <p class="profile-authline" id="authStatus">Not connected</p>
+            </div>
+          </div>
+          <div class="profile-stats">
+            <div><strong>128</strong><span>Players Online</span></div>
+            <div><strong>24/7</strong><span>Server Status</span></div>
+            <div><strong>RP+</strong><span>Premium Mode</span></div>
+          </div>
+          <div class="profile-tags">
+            <span id="profileTag1">FiveM Ready</span>
+            <span id="profileTag2">Discord Sync</span>
+            <span id="profileTag3">Kurdish unity</span>
+          </div>
+          <div class="profile-showcase-actions">
+            <button class="btn btn-secondary profile-edit-trigger" type="button" id="profileEditBtn">دەستکاری پرۆفایل</button>
+            <a class="btn btn-secondary" href="#discord">Discord Center</a>
+          </div>
+        </article>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="fivem://connect/cfx.re/join/YOUR_SERVER_LINK">Join Server</a>
+          <a class="btn btn-secondary" href="shop.html">بینینی شۆپ</a>
+          <a class="btn btn-secondary" href="https://discord.gg/SPA8RXs9" target="_blank" rel="noopener">Join Discord</a>
+          <button class="btn btn-secondary" id="copyLink">Copy CFX</button>
+        </div>
+
+        <div class="hero-meta-grid">
+          <article class="meta-card glass tilt-card">
+            <span>Players Online</span>
+            <strong class="counter" data-target="128">0</strong>
+          </article>
+          <article class="meta-card glass tilt-card">
+            <span>Discord Members</span>
+            <strong class="counter" data-target="4600">0</strong>
+          </article>
+          <article class="meta-card glass tilt-card">
+            <span>Active Staff</span>
+            <strong class="counter" data-target="18">0</strong>
+          </article>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal delay-1">
+        <div class="logo-stage ultra-stage tilt-card" id="logoStage">
+          <div class="flag-backdrop" aria-hidden="true">
+            <img src="assets/kurdistan-flag.gif" alt="Kurdistan Flag Animation" />
+          </div>
+          <div class="ring ring-a"></div>
+          <div class="ring ring-b"></div>
+          <div class="ring ring-c"></div>
+          <div class="holo-beam"></div>
+          <div class="light-columns"></div>
+          <div class="logo-wrap huge-logo pulse-gif">
+            <img src="assets/logo.png" alt="Kurdistan Unity " class="main-logo" />
+          </div>
+          <div class="floating-card glass info-card card-a"><span>STATUS</span><strong>ONLINE</strong></div>
+          <div class="floating-card glass info-card card-b"><span>ACCOUNT</span><strong>Discord Auto Join</strong></div>
+          <div class="floating-card glass info-card card-c"><span>WEBHOOK</span><strong>READY UI</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee-wrap">
+      <div class="marquee">
+        <span>Kurdistan Unity </span>
+        <span>Music Toggle</span>
+        <span>Staff Page</span>
+        <span>Store / Shop</span>
+        <span>Player Feed</span>
+        <span>Discord Login UI</span>
+        <span>Friend Posts</span>
+      </div>
+    </section>
+
+    <section class="section container" id="features">
+      <div class="section-head reveal">
+        <span>FEATURES</span>
+        
+      </div>
+      <div class="features-grid eight-grid">
+        <article class="feature glass tilt-card reveal"><div class="feature-icon">🎵</div><h3>Music On/Off</h3><p>گۆرانی Cheri Cheri Lady بە دوگمەی on/off.</p></article>
+        <article class="feature glass tilt-card reveal delay-1"><div class="feature-icon">🛒</div><h3>Store Page</h3><p>شۆپی VIP, Cars, Coins و bundles.</p></article>
+        <article class="feature glass tilt-card reveal delay-2"><div class="feature-icon">🛡️</div><h3>Staff Page</h3><p>لیستی ستاف، رۆڵ، ئامادەبوون و فۆرم.</p></article>
+        <article class="feature glass tilt-card reveal"><div class="feature-icon">👥</div><h3>Add Friend</h3><p>هاوڕێ زیاد بکە و لە localStorage پارێزراوە.</p></article>
+        <article class="feature glass tilt-card reveal delay-1"><div class="feature-icon">📝</div><h3>Post Feed</h3><p>Player و staff پۆست دەکەن لە community feed.</p></article>
+        <article class="feature glass tilt-card reveal delay-2"><div class="feature-icon">🔐</div><h3>Discord Auth</h3><p>Login + auto-join بۆ Discord بە backend.</p></article>
+        <article class="feature glass tilt-card reveal"><div class="feature-icon">📡</div><h3>Webhook + Staff Bot</h3><p>Discord webhook و staff-bot config بۆ dashboard.</p></article>
+        <article class="feature glass tilt-card reveal delay-1"><div class="feature-icon">🌌</div><h3>Ultra 3D</h3><p>Three.js city، particles و depth motion.</p></article>
+      </div>
+    </section>
+
+    <section class="section container dual-grid" id="feed">
+      <div class="glass panel reveal">
+        <div class="section-mini-head">
+          <span>COMMUNITY FEED</span>
+          <h3>پۆستی پلەیەر و ستاف</h3>
+        </div>
+        <form id="postForm" class="stack-form">
+          <div class="form-row two-cols">
+            <input type="text" id="postAuthor" placeholder="ناوی خۆت" required>
+            <select id="postRole">
+              <option value="Player">Player</option>
+              <option value="Staff">Staff</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+          <textarea id="postText" rows="4" placeholder="پۆستەکەت بنووسە..."></textarea>
+          <button class="btn btn-primary" type="submit">Post Now</button>
+        </form>
+        <div id="feedList" class="feed-list"></div>
+      </div>
+
+      <div class="side-stack reveal delay-1">
+        <article class="glass panel tilt-card">
+          <div class="section-mini-head"><span>FRIENDS</span><h3>هاوڕێ زیاد بکە</h3></div>
+          <form id="friendForm" class="stack-form">
+            <input type="text" id="friendName" placeholder="ناوی هاوڕێ" required>
+            <input type="text" id="friendTag" placeholder="Discord / Game tag">
+            <button class="btn btn-secondary" type="submit">Add Friend</button>
+          </form>
+          <div id="friendList" class="chip-list"></div>
+        </article>
+
+        <article class="glass panel tilt-card" id="discord">
+          <div class="section-mini-head"><span>DISCORD</span><h3>گرتە بکە بۆ هاتنە سێرڤەری Kurdistan Unity</h3></div>
+          <div class="stack-form">
+            <a class="btn btn-primary" id="discordJoinBtn" href="#" data-discord-login>Login with Discord</a>
+            <a class="btn btn-secondary" href="https://discord.gg/SPA8RXs9" target="_blank" rel="noopener">Open Invite Link</a>
+          </div>
+          <div id="discordStatus" class="status-pill">Discord: Not connected</div>
+          <form id="webhookForm" class="stack-form">
+
+          </form>
+          <div id="webhookState" class="status-pill">ater</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container showcase-grid">
+      <article class="glass panel tilt-card reveal">
+        <span class="label-pill">STAFF PREVIEW</span>
+        <h3>ستاف پەیج</h3>
+        <p>مودیری سێرڤەر، admin، moderator و support team بە کارت و status.</p>
+        <a class="btn btn-secondary" href="staff.html">Open Staff Page</a>
+      </article>
+      <article class="glass panel tilt-card reveal delay-1">
+        <span class="label-pill">SHOP PREVIEW</span>
+        <h3>شۆپ پەیج</h3>
+        <p>VIP Gold، VIP Diamond، Coin packs، Cars و starter bundles.</p>
+        <a class="btn btn-secondary" href="shop.html">Open Shop Page</a>
+      </article>
+      <article class="glass panel tilt-card reveal delay-2">
+        <span class="label-pill">AUTH PREVIEW</span>
+        <h3>Google / Discord Account</h3>
+        <p>Discord login + server saved profile ئامادەیە، بەڵام بۆ OAuth هێشتا Discord App credentials پێویستە.</p>
+        <button class="btn btn-secondary" id="authOpen2">Open Account Modal</button>
+      </article>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="authModal">
+    <div class="modal glass">
+      <button class="close-modal" id="authClose">×</button>
+      <div class="section-mini-head"><span>PROFILE CENTER</span><h3>پرۆفایلی Discord</h3></div>
+
+            <div class="profile-modal-hero glass">
+        <div class="profile-modal-banner" id="profilePreviewBanner"></div>
+        <div class="profile-modal-hero-content">
+          <div class="profile-modal-avatar-wrap">
+            <img src="assets/logo.png" alt="Profile Preview" id="profilePreviewAvatar" class="profile-modal-avatar" />
+          </div>
+          <div>
+            <span class="profile-kicker">DISCORD PROFILE</span>
+            <h4 id="profilePreviewName">Kurdistan unity</h4>
+            <p id="profilePreviewRole">Community Member • Editable Profile</p>
+          </div>
+        </div>
+      </div>
+      <div class="auth-grid">
+        <button class="auth-btn google-btn" type="button">Google Demo</button>
+        <a class="auth-btn discord-btn" href="#" data-discord-login>Login with Discord</a>
+      </div>
+      <div class="or-line"><span>یان دەستکاری پرۆفایل</span></div>
+      <form class="stack-form profile-edit-form" id="profileForm">
+        <input type="text" id="editProfileName" placeholder="ناوی پرۆفایل">
+        <input type="text" id="editProfileRole" placeholder="Status / Bio">
+        <div class="form-row two-cols">
+          <input type="text" id="editTag1" placeholder="Tag 1">
+          <input type="text" id="editTag2" placeholder="Tag 2">
+        </div>
+        <input type="text" id="editTag3" placeholder="Tag 3">
+        <div class="hero-actions profile-modal-actions">
+          <button class="btn btn-primary" type="submit">Save Profile</button>
+          <button class="btn btn-secondary" type="button" id="resetProfileBtn">Reset</button>
+          <button class="btn btn-secondary" type="button" id="logoutBtn">Logout</button>
+          <button class="btn btn-danger" type="button" id="deleteAccountBtn">Delete Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer container">
+    <div>
+      <strong>Kurdistan Unity</strong>
+      <p></p>
+    </div>
+    <div class="footer-links">
+      <a href="#top">Home</a>
+      <a href="staff.html">Staff</a>
+      <a href="shop.html">Shop</a>
+    </div>
+  </footer>
+
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/cheri-cheri-lady.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script type="module" src="site-content.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

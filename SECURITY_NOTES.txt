@@ -1,0 +1,27 @@
+Security notes
+==============
+
+What was fixed in this cleaned build:
+- Removed exposed secrets from backend/.env
+- Removed hard-coded Discord webhook usage from frontend files
+- Required admin credentials to be configured via environment variables
+- Added admin login rate limiting
+- Added expiring session storage
+- Added expiring OAuth state handling
+- Escaped user-controlled HTML in several frontend renders
+- Switched frontend backend meta tag to auto for easier deployment
+
+What you should still do:
+1. Rotate every secret that was previously exposed in the original upload:
+   - Discord client secret
+   - Discord bot token
+   - Discord webhook URL/token
+   - Any admin password that matched the old project
+2. Review Firebase / Firestore security rules
+3. Do not commit backend/.env or backend/data/*.json
+4. If you deploy publicly, use HTTPS so cookies can be sent with the Secure flag
+
+Known limitations that were not fully redesigned:
+- Sessions are still stored in memory, so they reset when the server restarts
+- No database-backed admin system yet
+- No CSRF token system yet

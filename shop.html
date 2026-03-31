@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurdistan Unity RP | Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="discord-backend" content="auto" />
+</head>
+<body class="subpage" data-shop-page>
+  <canvas id="scene3d" aria-hidden="true"></canvas>
+  <div class="noise"></div>
+
+  <header class="header glass">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <div class="brand-logo-wrap pulse-gif small-logo">
+          <img src="assets/logo.png" alt="logo" class="brand-logo">
+        </div>
+        <div>
+          <strong>Kurdistan Unity RP</strong>
+          <small>Luxury Premium Store</small>
+        </div>
+      </a>
+      <nav class="nav open static-nav">
+        <a href="index.html">Home</a>
+        <a href="staff.html">Staff</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container sub-hero shop-page-main">
+    <section class="section-head reveal top-space shop-page-head">
+      <span>SHOP PAGE</span>
+      <h1 data-site-key="shopTitle">Store / Shop</h1>
+      <p data-site-key="shopIntro">VIP، coin pack، custom car و bundle ـی تایبەت بۆ پلەیەرەکان.</p>
+    </section>
+
+    <section class="shop-hero-grid reveal">
+      <article class="shop-spotlight glass tilt-card">
+        <div class="shop-spotlight-copy">
+          <span class="shop-mini-kicker">TOP DROP</span>
+          <h2>شۆپی نوێ بە شێوازێکی luxury و مۆدێرن</h2>
+          <p>
+            شۆپەکە نوێ کراوەتەوە بە card ـی premium، filter، search، cart و spotlight بۆ باشترین item ـەکان.
+            هەموو شتێک mobile-friendly و خێرا کراوە.
+          </p>
+          <div class="shop-spotlight-actions">
+            <button class="btn btn-primary" id="shopJumpToProducts" type="button">بینینی ئایتمەکان</button>
+            <button class="btn btn-secondary" id="shopOpenDiscordHero" type="button">Open Discord</button>
+          </div>
+        </div>
+
+        <div class="shop-spotlight-stats">
+          <div class="shop-stat-card">
+            <strong>08+</strong>
+            <span>Premium Packs</span>
+          </div>
+          <div class="shop-stat-card">
+            <strong>24/7</strong>
+            <span>Fast Support</span>
+          </div>
+          <div class="shop-stat-card">
+            <strong>VIP</strong>
+            <span>Instant Perks</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="shop-featured-panel glass reveal delay-1" id="shopFeaturedCard" aria-live="polite"></aside>
+    </section>
+
+    <section class="shop-toolbar glass reveal" id="shopProductsSection">
+      <div class="shop-toolbar-head">
+        <div>
+          <span class="shop-mini-kicker">SMART BROWSE</span>
+          <h2>گەڕان و filter ـکردنی item ـەکان</h2>
+        </div>
+        <div class="shop-search-wrap">
+          <label class="sr-only" for="shopSearch">گەڕان بەدوای item</label>
+          <input id="shopSearch" type="search" placeholder="گەڕان... VIP، Coins، Bundle ..." autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="shop-filter-row" id="shopFilters" role="tablist" aria-label="Shop Categories">
+        <button class="shop-filter is-active" type="button" data-filter="all">All</button>
+        <button class="shop-filter" type="button" data-filter="vip">VIP</button>
+        <button class="shop-filter" type="button" data-filter="coins">Coins</button>
+        <button class="shop-filter" type="button" data-filter="vehicle">Vehicle</button>
+        <button class="shop-filter" type="button" data-filter="bundle">Bundle</button>
+        <button class="shop-filter" type="button" data-filter="team">Team</button>
+      </div>
+    </section>
+
+    <section class="shop-shell reveal delay-1">
+      <div class="shop-products-pane">
+        <div class="shop-products-meta">
+          <p class="muted-note" id="shopResultText">هەموو ئایتمەکان پیشان دەدرێن.</p>
+          <div class="shop-inline-note">
+            <span class="status-pill">Demo Cart</span>
+            <span class="status-pill">Stylish UI</span>
+            <span class="status-pill">Mobile Ready</span>
+          </div>
+        </div>
+
+        <div class="shop-grid shop-grid-premium" id="shopProductGrid" aria-live="polite"></div>
+      </div>
+
+      <aside class="shop-cart-panel glass">
+        <div class="shop-cart-head">
+          <div>
+            <span class="shop-mini-kicker">MY CART</span>
+            <h3>Cart Summary</h3>
+          </div>
+          <div class="shop-cart-count" id="shopItemCount">0</div>
+        </div>
+
+        <div class="shop-cart-list" id="shopCartList"></div>
+
+        <div class="shop-empty-state" id="shopEmptyState">
+          <div class="shop-empty-icon">✦</div>
+          <p>هێشتا هیچ item ـێکت زیاد نەکردووە. لە خوارەوە item هەڵبژێرە.</p>
+        </div>
+
+        <div class="shop-cart-total glass">
+          <span>Subtotal</span>
+          <strong id="shopSubtotal">$0.00</strong>
+        </div>
+
+        <div class="shop-cart-actions">
+          <button class="btn btn-primary" type="button" id="shopCheckoutBtn">Demo Checkout</button>
+          <button class="btn btn-secondary" type="button" id="shopClearCart">Clear Cart</button>
+          <button class="btn btn-secondary" type="button" id="shopOpenDiscord">Discord Ticket</button>
+        </div>
+
+        <p class="muted-note shop-cart-note">
+
+        </p>
+      </aside>
+    </section>
+
+    <section class="shop-benefits-grid reveal delay-2">
+      <article class="shop-benefit glass">
+        <span class="feature-icon">⚡</span>
+        <h3>Fast Browse</h3>
+        <p>گەڕان و filter بە خێرایی، بۆ ئەوەی پلەیەر زوو item ـی خۆی بدۆزێتەوە.</p>
+      </article>
+      <article class="shop-benefit glass">
+        <span class="feature-icon">💎</span>
+        <h3>Luxury Cards</h3>
+        <p>card ـی نوێ بە gradient و glow و hover effect بۆ هەستێکی premium.</p>
+      </article>
+      <article class="shop-benefit glass">
+        <span class="feature-icon">🛒</span>
+        <h3>Smart Cart</h3>
+        <p>cart ی ناوخۆیی هەیە بۆ demo preview و بینینی کۆی نرخ و item.</p>
+      </article>
+      <article class="shop-benefit glass">
+        <span class="feature-icon">📱</span>
+        <h3>Responsive</h3>
+        <p>لە مۆبایل و تابلێت و desktop هەموویاندا دیزاینەکە ڕێک و جوان کار دەکات.</p>
+      </article>
+    </section>
+
+
+
+      </article>
+    </section>
+
+    <div class="shop-toast" id="shopStatus" aria-live="polite"></div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script type="module" src="site-content.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
